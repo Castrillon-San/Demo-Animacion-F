@@ -1,0 +1,290 @@
+fileFormatVersion: 2
+guid: 16e3e5755d011d645b3500adf059b254
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 3272016633933684720
+    second: Ystra_Rig|1.BasePose
+  - first:
+      74: -6635510199334987923
+    second: Ystra_Rig|ArmInt.RAction
+  - first:
+      74: -8472473597525122140
+    second: Ystra_Rig|Brows_corrective_UP
+  - first:
+      74: 8650142731191376106
+    second: Ystra_Rig|Brows_Left
+  - first:
+      74: -4180178646609228641
+    second: Ystra_Rig|Brows_Right
+  - first:
+      74: 2557280177420866946
+    second: Ystra_Rig|Brows_Up
+  - first:
+      74: -2773244558318124775
+    second: Ystra_Rig|Eyes_Blink
+  - first:
+      74: 2198980722258091283
+    second: Ystra_Rig|Eyes_Happy
+  - first:
+      74: 5584259108140829905
+    second: Ystra_Rig|Eyes_Wide
+  - first:
+      74: -3773190120982232122
+    second: Ystra_Rig|mesh_hatArmInt.001Action
+  - first:
+      74: -3032358608642103077
+    second: Ystra_Rig|mesh_hatArmInt.002Action
+  - first:
+      74: 2067219893634453372
+    second: Ystra_Rig|mesh_hatArmInt.003Action
+  - first:
+      74: 6551421270114974429
+    second: Ystra_Rig|mesh_ystraHatAction
+  - first:
+      74: 6563064722429954998
+    second: Ystra_Rig|Mouth_Open
+  - first:
+      74: 5047020237126374761
+    second: Ystra_Rig|Mouth_Sad
+  - first:
+      74: 6710980169194351432
+    second: Ystra_Rig|Mouth_Small
+  - first:
+      74: -6179277959238931956
+    second: Ystra_Rig|Mouth_Smile
+  - first:
+      74: 5466967878133963606
+    second: Ystra_Rig|Mouth_Wide
+  - first:
+      74: -4737941805180042092
+    second: Ystra_Rig|PlaneAction
+  - first:
+      74: 342797443125050687
+    second: Ystra_Rig|PlaneAction.001
+  - first:
+      74: -5864270108723219498
+    second: Ystra_Rig|PlaneAction.002
+  - first:
+      74: -4591164834242589051
+    second: Ystra_Rig|PlaneAction.003
+  - first:
+      74: 6991677056652082488
+    second: Ystra_Rig|PlaneAction.005
+  - first:
+      74: -5387637848793947035
+    second: Ystra_Rig|PlaneAction.006
+  - first:
+      74: -7977196089559484995
+    second: Ystra_Rig|PlaneAction.008
+  - first:
+      74: 1522044517434760511
+    second: Ystra_Rig|PlaneAction.009
+  - first:
+      74: 1451304786370302400
+    second: Ystra_Rig|PlaneAction.010
+  - first:
+      74: -4981104609978454620
+    second: Ystra_Rig|PlaneAction.011
+  - first:
+      74: 1747028303972535907
+    second: Ystra_Rig|Sliders
+  - first:
+      74: 980227108471869307
+    second: Ystra_Rig|WGT-SleevesAction
+  - first:
+      74: 613407137865435935
+    second: Ystra_Rig|WGT-Ystra_Rig_Hair.001Action
+  - first:
+      74: 1702411202582590557
+    second: Ystra_Rig|WGT-Ystra_Rig_Hair.001Action.001
+  - first:
+      74: 6255382532652965068
+    second: Ystra_Rig|WGT-Ystra_Rig_Hair.003Action
+  - first:
+      74: 7722870110885811732
+    second: Ystra_Rig|WGT-Ystra_Rig_Hair.003Action.001
+  - first:
+      74: 7623126991200165547
+    second: Ystra_Rig|WGT-Ystra_Rig_Hat.006Action
+  - first:
+      74: 8792454368476493419
+    second: Ystra_Rig|WGT-Ystra_Rig_upper_arm_parent.L.001Action
+  - first:
+      74: 884193260259291760
+    second: Ystra_Rig|WGT-Ystra_Rig_upper_arm_parent.LAction
+  - first:
+      74: -3743900935095524419
+    second: Ystra_Rig|WGT-Ystra_Rig_upper_arm_parent.R.001Action
+  - first:
+      74: -5356698357322386509
+    second: Ystra_Rig|WGT-Ystra_Rig_upper_arm_parent.RAction
+  - first:
+      74: -394620660781813398
+    second: Ystra_Rig|WGT_Ystra_Rig_FP_Control.001Action
+  - first:
+      74: -5924662414318275094
+    second: Ystra_Rig|WGT_Ystra_Rig_FP_Control.002Action
+  - first:
+      74: 3564719616485697868
+    second: Ystra_Rig|WGT_Ystra_Rig_FP_ControlAction
+  - first:
+      74: -4906484275618417009
+    second: Ystra_Rig|Ystra_RigAction
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Ystra
+    second: {fileID: 2100000, guid: 6cc38145246ddd547a2ae27600dfe245, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_YstraEyes
+    second: {fileID: 2100000, guid: 6ac8bf5ecdb482248bb66f3f00c62433, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_YstraHair
+    second: {fileID: 2100000, guid: 2958540d2191ad341ac95fa3710e9bbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_YstraHatArmAura
+    second: {fileID: 2100000, guid: e33eff1692fbd774d83144a2008a695d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_YstraHatArms
+    second: {fileID: 2100000, guid: 25ebf71c11149d54a84961eed551e2dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_YstraHatInt
+    second: {fileID: 2100000, guid: 431abdd028a3b054da837d29e7b37c19, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Ystra_Rig|1.BasePose
+      takeName: Ystra_Rig|1.BasePose
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
