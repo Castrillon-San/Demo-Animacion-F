@@ -9,7 +9,9 @@ namespace inSession
     [RequireComponent(typeof(Rigidbody))]
     public class CharacterMovement : MonoBehaviour, IInputListener
     {
-        [SerializeField] private float movementSpeed;
+        public float movementSpeed;
+        [SerializeField] private float runningSpeed;
+        [SerializeField] private float walkingSpeed;
         [SerializeField] private float acceleration = 5;
         [SerializeField] private float deceleration = 5;
         [SerializeField] private float angularDampening = 20;
@@ -55,8 +57,14 @@ namespace inSession
             if (walkValue > 0)
             {
                 anim.SetBool("walking", true);
+                movementSpeed = walkingSpeed;
             }
-            else if (walkValue == 0) anim.SetBool("walking", false);
+            else if (walkValue == 0)
+            {
+                anim.SetBool("walking", false);
+                movementSpeed = runningSpeed;
+            }
+              
         }
         public void Jump(InputAction.CallbackContext context)
         {
