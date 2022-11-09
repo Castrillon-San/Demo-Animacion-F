@@ -22,6 +22,9 @@ namespace inSession
         [SerializeField] private float LowJumpGravity;
 
         [SerializeField] Animator anim;
+        private float walkValue;
+        private float moveValue;
+        private float breakerCount;
 
         private Vector2 inputVector;
         private Vector2 wetInputVector;
@@ -29,8 +32,6 @@ namespace inSession
 
         private Rigidbody rigidbody;
         private float jumpValue;
-        private float walkValue;
-
         private bool airbone
         {
             get
@@ -51,6 +52,11 @@ namespace inSession
         {
             if (context.action.name != "Walk") return;
             walkValue = context.ReadValue<float>();
+            if (walkValue > 0)
+            {
+                anim.SetBool("walking", true);
+            }
+            else if (walkValue == 0) anim.SetBool("walking", false);
         }
         public void Jump(InputAction.CallbackContext context)
         {
@@ -89,7 +95,8 @@ namespace inSession
                 y = Mathf.MoveTowards(y, inputVector.y, Time.deltaTime * acceleration);
             }
             wetInputVector.Set(x, y);
-            anim.SetFloat("speed", MoveDetector(x , y));
+            moveValue = MoveDetector(x, y);
+            anim.SetFloat("speed", moveValue );
         }
 
         private float MoveDetector(float x, float y)
@@ -97,11 +104,21 @@ namespace inSession
             Vector2 movement = new Vector2(x,y);
             float speed = 0;
             speed = movement.magnitude;
-            if (walkValue > 0 && speed > 0)
-            {
-                speed = movement.magnitude/2;
-            }
             return speed;            
+        }
+        private void BreakerCounter()
+        {
+            if (moveValue != 0) breakerCount = 0;
+            breakerCount += Time.deltaTime;
+            if (breakerCount >= 5)
+            {
+                anim.SetTrigger("breaker");
+                breakerCount = -5;
+            }
+        }
+        private void Update()
+        {
+            BreakerCounter();  
         }
         private void FixedUpdate()
         {
