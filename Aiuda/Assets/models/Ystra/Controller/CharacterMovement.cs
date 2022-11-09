@@ -50,6 +50,16 @@ namespace inSession
             inputVector = context.ReadValue<Vector2>();
            
         }
+        public void Roll(InputAction.CallbackContext context)
+        {
+            if (context.action.name != "Roll") return;
+            anim.SetTrigger("roll");
+        }
+        public void Attack(InputAction.CallbackContext context)
+        {
+            if (context.action.name != "Attack") return;
+            anim.SetTrigger("attack");
+        }
         public void Walk(InputAction.CallbackContext context)
         {
             if (context.action.name != "Walk") return;
@@ -153,7 +163,7 @@ namespace inSession
             lastFoward = transform.forward;
         }
 
-        public Action<InputAction.CallbackContext>[] ListenerFunctions => new Action<InputAction.CallbackContext>[] { Move, Jump, Walk };
+        public Action<InputAction.CallbackContext>[] ListenerFunctions => new Action<InputAction.CallbackContext>[] { Move, Jump, Walk, Roll, Attack };
 
         private void OnDrawGizmos()
         {
