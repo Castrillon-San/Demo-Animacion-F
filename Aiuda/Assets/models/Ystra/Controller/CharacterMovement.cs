@@ -21,12 +21,15 @@ namespace inSession
         [SerializeField] private LayerMask airboneCheckMask;
         [SerializeField] private float LowJumpGravity;
 
+        [SerializeField] Animator anim;
+
         private Vector2 inputVector;
         private Vector2 wetInputVector;
         private Vector3 lastFoward;
 
         private Rigidbody rigidbody;
         private float jumpValue;
+        private float walkValue;
 
         private bool airbone
         {
@@ -44,11 +47,20 @@ namespace inSession
             inputVector = context.ReadValue<Vector2>();
            
         }
+        public void Walk(InputAction.CallbackContext context)
+        {
+            if (context.action.name != "Walk") return;
+            walkValue = context.ReadValue<float>();
+        }
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.action.name != "Jump") return;
-            jumpValue = context.ReadValue<float>();
-            if (!airbone) rigidbody.AddForce(Vector3.up * jumpSpeed * jumpValue, ForceMode.VelocityChange);
+            jumpValue = context.ReadValue<float>();     
+            if (!airbone)
+            {
+                rigidbody.AddForce(Vector3.up * jumpSpeed * jumpValue, ForceMode.VelocityChange);
+                anim.SetTrigger("jump");
+            }           
         }
         private void Awake()
         {
@@ -61,13 +73,14 @@ namespace inSession
             if (inputVector.x == 0)
             {
                 x = Mathf.MoveTowards(x, 0f, Time.deltaTime * deceleration);
+                
             }
             else
             {
                 x = Mathf.MoveTowards(x, inputVector.x, Time.deltaTime * acceleration);
-            }
-
-            if(inputVector.y == 0)
+                
+            }            
+            if (inputVector.y == 0)
             {
                 y = Mathf.MoveTowards(y, 0f, Time.deltaTime * deceleration);
             }
@@ -76,12 +89,23 @@ namespace inSession
                 y = Mathf.MoveTowards(y, inputVector.y, Time.deltaTime * acceleration);
             }
             wetInputVector.Set(x, y);
+            anim.SetFloat("speed", MoveDetector(x , y));
         }
 
+        private float MoveDetector(float x, float y)
+        {
+            Vector2 movement = new Vector2(x,y);
+            float speed = 0;
+            speed = movement.magnitude;
+            if (walkValue > 0 && speed > 0)
+            {
+                speed = movement.magnitude/2;
+            }
+            return speed;            
+        }
         private void FixedUpdate()
         {
             DampenImput();
-
             if (rigidbody.velocity.y < 0)
             {
                 rigidbody.velocity += Vector3.up * Physics.gravity.y * Time.fixedDeltaTime;
@@ -97,14 +121,14 @@ namespace inSession
             Vector3 motionVector = right * (wetInputVector.x * movementSpeed * Time.fixedDeltaTime) + 
                     foward * (wetInputVector.y * movementSpeed * Time.fixedDeltaTime);
             transform.Translate(motionVector, Space.World );
-            if(motionVector.magnitude > 0)
+            if (motionVector.magnitude > 0)
             {
                 transform.forward = Vector3.Slerp(lastFoward.normalized, motionVector.normalized, Time.fixedDeltaTime * angularDampening);
             }
             lastFoward = transform.forward;
         }
 
-        public Action<InputAction.CallbackContext>[] ListenerFunctions => new Action<InputAction.CallbackContext>[] { Move, Jump };
+        public Action<InputAction.CallbackContext>[] ListenerFunctions => new Action<InputAction.CallbackContext>[] { Move, Jump, Walk };
 
         private void OnDrawGizmos()
         {
