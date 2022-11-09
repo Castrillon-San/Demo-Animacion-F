@@ -34,7 +34,7 @@ namespace inSession
 
         private Rigidbody rigidbody;
         private float jumpValue;
-        private bool airbone
+        [SerializeField] private bool airbone
         {
             get
             {
@@ -79,11 +79,13 @@ namespace inSession
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.action.name != "Jump") return;
-            jumpValue = context.ReadValue<float>();     
+            jumpValue = context.ReadValue<float>();
+            Debug.Log("airbone is" + airbone);
             if (!airbone)
             {
-                rigidbody.AddForce(Vector3.up * jumpSpeed * jumpValue, ForceMode.VelocityChange);
                 anim.SetTrigger("jump");
+                rigidbody.AddForce(Vector3.up * jumpSpeed * jumpValue, ForceMode.VelocityChange);
+                
             }           
         }
         private void Awake()
