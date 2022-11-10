@@ -24,6 +24,7 @@ namespace inSession
             {
                 foreach (Action<CallbackContext> function in inputListener.ListenerFunctions)
                 {
+                   
                     inputTarget.onActionTriggered += function;
                 }
             }          

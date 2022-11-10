@@ -1578,6 +1578,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4540120557582983012, guid: daf995c1593d53b4aa1f294ad23170ec,
+        type: 3}
+      propertyPath: boneSize
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4540120557582983012, guid: daf995c1593d53b4aa1f294ad23170ec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4540120557582983013, guid: daf995c1593d53b4aa1f294ad23170ec,
         type: 3}
       propertyPath: m_Weight
@@ -1586,6 +1596,11 @@ PrefabInstance:
     - target: {fileID: 8007155257904267255, guid: daf995c1593d53b4aa1f294ad23170ec,
         type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583419927899856499, guid: daf995c1593d53b4aa1f294ad23170ec,
+        type: 3}
+      propertyPath: m_Weight
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1772,9 +1787,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.27
-  m_Height: 1.3931189
+  m_Height: 1.4350935
   m_Direction: 1
-  m_Center: {x: 0, y: 0.7043004, z: 0}
+  m_Center: {x: 0, y: 0.6833131, z: 0}
 --- !u!95 &2013481399 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8007155257904267255, guid: daf995c1593d53b4aa1f294ad23170ec,

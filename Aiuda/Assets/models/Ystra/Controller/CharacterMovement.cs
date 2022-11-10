@@ -46,19 +46,19 @@ namespace inSession
 
         public void Move(InputAction.CallbackContext context)
         {
-            if (context.action.name != "Motion") return;
+            if (context.action.name != "Motion") return;            
             inputVector = context.ReadValue<Vector2>();
            
         }
         public void Roll(InputAction.CallbackContext context)
         {
             if (context.action.name != "Roll") return;
-            anim.SetTrigger("roll");
+            if (context.ReadValue<float>() == 1)  anim.SetTrigger("roll");
         }
         public void Attack(InputAction.CallbackContext context)
         {
             if (context.action.name != "Attack") return;
-            anim.SetTrigger("attack");
+            if (context.ReadValue<float>() == 1) anim.SetTrigger("attack");
         }
         public void Walk(InputAction.CallbackContext context)
         {
@@ -79,14 +79,16 @@ namespace inSession
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.action.name != "Jump") return;
+            Debug.Log(context.ReadValue<float>());
             jumpValue = context.ReadValue<float>();
-            Debug.Log("airbone is" + airbone);
             if (!airbone)
             {
-                anim.SetTrigger("jump");
-                rigidbody.AddForce(Vector3.up * jumpSpeed * jumpValue, ForceMode.VelocityChange);
-                
-            }           
+                if (context.ReadValue<float>() == 1)
+                {
+                    anim.SetTrigger("jump");
+                }                
+                rigidbody.AddForce(Vector3.up * jumpSpeed * jumpValue, ForceMode.VelocityChange);               
+            }  
         }
         private void Awake()
         {
