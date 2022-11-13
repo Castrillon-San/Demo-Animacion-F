@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Init.unity
+    guid: 6aa98dda3165ba244a08e533c2ea53d1
+  - enabled: 1
+    path: Assets/Scenes/Nia.unity
+    guid: 72d942e380c1cd749ba2039246d7720a
+  - enabled: 0
+    path: Assets/models/Ystra/Controller/Controller.unity
+    guid: e71de260507a46b4297aa03207eeae0e
+  - enabled: 0
     path: Assets/models/Tanuki/TanukiScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
