@@ -18,7 +18,6 @@ namespace inSession
 
         [SerializeField] private float rollForce = 5;
         [SerializeField] private float jumpSpeed = 5;
-        [SerializeField] private Camera floorview;
         [SerializeField] private Vector3 airboneCheckStart;
         [SerializeField] private Vector3 airboneCheckDirection;
         [SerializeField] private float airboneCheckDistance;
@@ -44,11 +43,6 @@ namespace inSession
                     transform.TransformDirection(airboneCheckDirection));
                 return !Physics.Raycast(r, airboneCheckDistance, airboneCheckMask);
             }
-        }
-
-        private void Start()
-        {
-            floorview = GameObject.Find("floorView").GetComponent<Camera>();
         }
         public void Move(InputAction.CallbackContext context)
         {
@@ -165,7 +159,7 @@ namespace inSession
                 rigidbody.velocity += Vector3.up * Physics.gravity.y * LowJumpGravity * Time.fixedDeltaTime;
             }
 
-            Transform cameraTransform = floorview.transform;
+            Transform cameraTransform = Camera.main.transform;
             Vector3 right = Vector3.ProjectOnPlane(cameraTransform.right, transform.up);
             Vector3 foward = Vector3.ProjectOnPlane(cameraTransform.forward, transform.up);
             Vector3 motionVector = right * (wetInputVector.x * movementSpeed * Time.fixedDeltaTime) + 
