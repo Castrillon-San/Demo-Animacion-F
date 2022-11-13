@@ -84,7 +84,7 @@ namespace inSession
         public void Jump(InputAction.CallbackContext context)
         {
             if (context.action.name != "Jump") return;
-            Debug.Log(context.ReadValue<float>());
+            Debug.Log(airbone);
             jumpValue = context.ReadValue<float>();
             if (!airbone)
             {
@@ -178,7 +178,7 @@ namespace inSession
         {
             Gizmos.color = airbone ? Color.red : Color.green;
             Vector3 rayStart = transform.TransformPoint(airboneCheckStart);
-            //Gizmos.DrawLine();
+            //Gizmos.DrawLine(rayStart);
         }
     }
 }
