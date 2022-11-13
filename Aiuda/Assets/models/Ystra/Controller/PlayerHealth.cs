@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace inSession
 {
@@ -12,6 +13,7 @@ namespace inSession
         [SerializeField] float healReciben;
         [SerializeField] bool isAlive = true;
         [SerializeField] float limpSpeed;
+        [SerializeField] Slider healthBar;
         private float normalspeed;
 
         private CharacterMovement movement;
@@ -20,6 +22,8 @@ namespace inSession
         {           
             movement = GetComponent<CharacterMovement>();
             normalspeed = movement.movementSpeed;
+            healthBar = FindObjectOfType<Slider>();
+            healthBar.value = playerHealth;
         }
         private void Update()
         {
@@ -52,6 +56,7 @@ namespace inSession
         private void Harm()
         {
             playerHealth = playerHealth - damageTaken;
+            healthBar.value = playerHealth;
             anim.SetTrigger("harm");
             if (playerHealth <= 0)
             {
@@ -65,6 +70,7 @@ namespace inSession
         private void Heal()
         {
             playerHealth = playerHealth + healReciben;
+            healthBar.value = playerHealth;
             Debug.Log(gameObject.name + " current health is:" + playerHealth);
             SetLimp();
         }

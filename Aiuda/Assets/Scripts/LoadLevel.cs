@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class LoadLevel : MonoBehaviour
 {
@@ -16,5 +17,10 @@ public class LoadLevel : MonoBehaviour
         player = Instantiate(Characters[PlayerPrefs.GetInt("player")], PlayerSpawnPoint.position, PlayerSpawnPoint.rotation);
         vCam.Follow = player.transform;
         vCam.LookAt = player.transform;
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        else if(Input.GetKeyDown(KeyCode.T)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
