@@ -944,6 +944,7 @@ MonoBehaviour:
   - {fileID: 591927778458889362, guid: 428e070475a65c04d9b513097dfe8182, type: 3}
   - {fileID: 2564875039014824259, guid: d92836cc2c35b5541afd2c203ee0f744, type: 3}
   - {fileID: 9057281595285632595, guid: 9e43854516647a54d82ac1fff972292d, type: 3}
+  - {fileID: 2912299408039608305, guid: 48b8c2a60b7e71b40911a0a60e4e62bf, type: 3}
   PlayerSpawnPoint: {fileID: 1729185302}
   vCam: {fileID: 1153371281}
   controls: {fileID: 1797868356}
