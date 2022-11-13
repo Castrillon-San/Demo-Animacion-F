@@ -16,6 +16,7 @@ namespace inSession
         [SerializeField] private float deceleration = 5;
         [SerializeField] private float angularDampening = 20;
 
+        [SerializeField] private float rollForce = 5;
         [SerializeField] private float jumpSpeed = 5;
         [SerializeField] private Vector3 airboneCheckStart;
         [SerializeField] private Vector3 airboneCheckDirection;
@@ -53,7 +54,12 @@ namespace inSession
         public void Roll(InputAction.CallbackContext context)
         {
             if (context.action.name != "Roll") return;
-            if (context.ReadValue<float>() == 1)  anim.SetTrigger("roll");
+            if (context.ReadValue<float>() == 1)
+            {
+                anim.SetTrigger("roll");
+                rigidbody.AddForce(Vector3.forward * rollForce);
+            }
+            
         }
         public void Attack(InputAction.CallbackContext context)
         {

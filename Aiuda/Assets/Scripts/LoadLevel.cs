@@ -1,6 +1,7 @@
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LoadLevel : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class LoadLevel : MonoBehaviour
     [SerializeField] private GameObject[] Characters;
     [SerializeField] private Transform PlayerSpawnPoint;
     [SerializeField] CinemachineVirtualCamera vCam;
+    [SerializeField] Image controls;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class LoadLevel : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        else if(Input.GetKeyDown(KeyCode.T)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        else if (Input.GetKeyDown(KeyCode.T)) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        else if (Input.GetKeyDown(KeyCode.H)) controls.gameObject.SetActive(!controls.gameObject.activeSelf);
     }
 }

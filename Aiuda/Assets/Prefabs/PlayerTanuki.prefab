@@ -15005,6 +15005,7 @@ MonoBehaviour:
   acceleration: 5
   deceleration: 5
   angularDampening: 20
+  rollForce: 0
   jumpSpeed: 2.5
   airboneCheckStart: {x: 0, y: 0, z: 0}
   airboneCheckDirection: {x: 0, y: -1, z: 0}
@@ -15045,6 +15046,7 @@ MonoBehaviour:
   healReciben: 50
   isAlive: 1
   limpSpeed: 1
+  healthBar: {fileID: 0}
 --- !u!1 &9164570459761958461
 GameObject:
   m_ObjectHideFlags: 0
