@@ -16,12 +16,14 @@ namespace inSession
         [SerializeField] Slider healthBar;
         [SerializeField] Canvas pushText;
         private float normalspeed;
+        private ReachAnim reach;
 
         private CharacterMovement movement;
 
         private void Start()
         {           
             movement = GetComponent<CharacterMovement>();
+            reach = GetComponent<ReachAnim>();
             normalspeed = movement.movementSpeed;            
             healthBar = FindObjectOfType<Slider>();
             healthBar.value = playerHealth;
@@ -100,6 +102,8 @@ namespace inSession
                 if(pushText.enabled == false) pushText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    reach.healthPosition = other.gameObject.transform.position;
+                    reach.grab = true;
                     Heal();
                     Destroy(other.gameObject);
                 }               
