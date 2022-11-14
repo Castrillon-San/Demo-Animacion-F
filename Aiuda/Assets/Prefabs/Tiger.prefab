@@ -2537,6 +2537,7 @@ GameObject:
   - component: {fileID: 8485182580281999154}
   - component: {fileID: 8485182580281999155}
   - component: {fileID: 8485182580281999152}
+  - component: {fileID: 8001754190425925599}
   m_Layer: 0
   m_Name: Tiger
   m_TagString: Untagged
@@ -2770,6 +2771,21 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   pushText: {fileID: 0}
   characterNum: 3
+--- !u!114 &8001754190425925599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912299408039608305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649f4102d2277544f9a8f6e5b9ebecf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iKRigChanger: {fileID: 2642479592671254437}
+  target: {fileID: 2642479592671254442}
+  grabSpeed: 5
 --- !u!1 &3082036413335792597
 GameObject:
   m_ObjectHideFlags: 0

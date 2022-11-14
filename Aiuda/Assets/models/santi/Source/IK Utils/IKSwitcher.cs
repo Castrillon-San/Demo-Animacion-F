@@ -5,7 +5,7 @@ using UnityEngine.Animations.Rigging;
 
 public class IKSwitcher : MonoBehaviour
 {
-    [SerializeField] [Range(0,1)] private float weight;
+    [Range(0,1)] public float weight;
     [SerializeField] private MultiParentConstraint[] targetChain;
 
     public void SetConstraintWeight()
@@ -18,6 +18,11 @@ public class IKSwitcher : MonoBehaviour
     }
 
     private void OnValidate()
+    {
+        SetConstraintWeight();
+    }
+
+    public void ChangeWeights()
     {
         SetConstraintWeight();
     }

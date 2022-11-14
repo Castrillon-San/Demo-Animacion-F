@@ -25,8 +25,9 @@ namespace inSession
         private void Start()
         {           
             movement = GetComponent<CharacterMovement>();
-            if(characterNum==0) reach = GetComponent<ReachAnim>();
-            else if(characterNum == 1) reach = GetComponent<ReachParentWeight>();
+            if (characterNum == 0) reach = GetComponent<ReachAnim>();
+            else if (characterNum == 1) reach = GetComponent<ReachParentWeight>();
+            else if (characterNum == 3) reach = GetComponent<IKSwitcherReach>();
             normalspeed = movement.movementSpeed;            
             healthBar = FindObjectOfType<Slider>();
             healthBar.value = playerHealth;
