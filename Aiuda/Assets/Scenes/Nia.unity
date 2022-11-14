@@ -98,7 +98,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b59562fc78092ba41ac31044fe57bdcd,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -3053,10 +3054,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1962077073453853134, guid: 3e01cecb4a8c7ed4a817b0b3f69602fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6755539243455657457, guid: 3e01cecb4a8c7ed4a817b0b3f69602fc,
         type: 3}
       propertyPath: m_Name
       value: Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755539243455657457, guid: 3e01cecb4a8c7ed4a817b0b3f69602fc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6755539243455657461, guid: 3e01cecb4a8c7ed4a817b0b3f69602fc,
         type: 3}
@@ -3111,6 +3122,11 @@ PrefabInstance:
     - target: {fileID: 6755539243455657461, guid: 3e01cecb4a8c7ed4a817b0b3f69602fc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747114147941864130, guid: 3e01cecb4a8c7ed4a817b0b3f69602fc,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

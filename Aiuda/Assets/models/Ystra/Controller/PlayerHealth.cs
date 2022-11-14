@@ -14,6 +14,7 @@ namespace inSession
         [SerializeField] bool isAlive = true;
         [SerializeField] float limpSpeed;
         [SerializeField] Slider healthBar;
+        [SerializeField] Canvas pushText;
         private float normalspeed;
 
         private CharacterMovement movement;
@@ -21,7 +22,7 @@ namespace inSession
         private void Start()
         {           
             movement = GetComponent<CharacterMovement>();
-            normalspeed = movement.movementSpeed;
+            normalspeed = movement.movementSpeed;            
             healthBar = FindObjectOfType<Slider>();
             healthBar.value = playerHealth;
         }
@@ -88,9 +89,29 @@ namespace inSession
             {
                 Harm();
             }
-            else if (collision.gameObject.tag == "Health")
+            
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.tag == "Health")
             {
-                Heal();
+                pushText = other.gameObject.GetComponentInChildren<Canvas>();
+                if(pushText.enabled == false) pushText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    Heal();
+                    Destroy(other.gameObject);
+                }               
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.tag == "Health")
+            {
+                pushText.enabled = false;
+                pushText = null;
             }
         }
     }
