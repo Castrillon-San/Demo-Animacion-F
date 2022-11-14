@@ -14829,6 +14829,7 @@ GameObject:
   - component: {fileID: 5694010832582618127}
   - component: {fileID: 5694010832582618121}
   - component: {fileID: 5694010832582618116}
+  - component: {fileID: 6044055712751581364}
   m_Layer: 0
   m_Name: PlayerTanuki
   m_TagString: Untagged
@@ -15048,7 +15049,22 @@ MonoBehaviour:
   limpSpeed: 1
   healthBar: {fileID: 0}
   pushText: {fileID: 0}
-  characterNum: 2
+  characterNum: 0
+--- !u!114 &6044055712751581364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9057281595285632595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbae106ae761574d9842f39c4405cb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iKRigChanger: {fileID: 8071733905830778369}
+  target: {fileID: 1382555692824825015}
+  grabSpeed: 7
 --- !u!1 &9164570459761958461
 GameObject:
   m_ObjectHideFlags: 0
