@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2564875039014824254}
   - component: {fileID: 2564875039014824255}
   - component: {fileID: 2564875039014824249}
+  - component: {fileID: 3738370157112014738}
   m_Layer: 0
   m_Name: Coyote
   m_TagString: Untagged
@@ -98,6 +99,7 @@ MonoBehaviour:
   acceleration: 5
   deceleration: 5
   angularDampening: 20
+  rollForce: 5
   jumpSpeed: 2.5
   airboneCheckStart: {x: 0, y: 0, z: 0}
   airboneCheckDirection: {x: 0, y: -1, z: 0}
@@ -125,6 +127,24 @@ MonoBehaviour:
   healReciben: 50
   isAlive: 0
   limpSpeed: 1
+  healthBar: {fileID: 0}
+  pushText: {fileID: 0}
+  characterNum: 1
+--- !u!114 &3738370157112014738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564875039014824259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c712f132281aba4eaf73dcc943111cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iKRigChanger: {fileID: 9181008572577259542}
+  target: {fileID: 9181008572577259543}
+  grabSpeed: 6
 --- !u!1001 &2564875038180153855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,6 +289,24 @@ Transform:
 --- !u!95 &4868694300901592711 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6920158964207048568, guid: 9beb0ec7019509f4da8419b7b00537bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2564875038180153855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9181008572577259542 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6697198877704337897, guid: 9beb0ec7019509f4da8419b7b00537bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2564875038180153855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f267cf3fea7c2604a9c8aef9a4008cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &9181008572577259543 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6697198877704337896, guid: 9beb0ec7019509f4da8419b7b00537bf,
     type: 3}
   m_PrefabInstance: {fileID: 2564875038180153855}
   m_PrefabAsset: {fileID: 0}

@@ -16,14 +16,17 @@ namespace inSession
         [SerializeField] Slider healthBar;
         [SerializeField] Canvas pushText;
         private float normalspeed;
-        private ReachAnim reach;
+        private IReach reach;
+        //private ReachAnim reach;
+        [SerializeField] int characterNum;
 
         private CharacterMovement movement;
 
         private void Start()
         {           
             movement = GetComponent<CharacterMovement>();
-            reach = GetComponent<ReachAnim>();
+            if(characterNum==0) reach = GetComponent<ReachAnim>();
+            else if(characterNum == 1) reach = GetComponent<ReachParentWeight>();
             normalspeed = movement.movementSpeed;            
             healthBar = FindObjectOfType<Slider>();
             healthBar.value = playerHealth;
@@ -59,6 +62,7 @@ namespace inSession
         private void Harm()
         {
             playerHealth = playerHealth - damageTaken;
+            if (playerHealth < 0) playerHealth = 0;
             healthBar.value = playerHealth;
             anim.SetTrigger("harm");
             if (playerHealth <= 0)
@@ -73,6 +77,7 @@ namespace inSession
         private void Heal()
         {
             playerHealth = playerHealth + healReciben;
+            if (playerHealth > 100) playerHealth = 100;
             healthBar.value = playerHealth;
             Debug.Log(gameObject.name + " current health is:" + playerHealth);
             SetLimp();

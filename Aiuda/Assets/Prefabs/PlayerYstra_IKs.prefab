@@ -2213,6 +2213,7 @@ MonoBehaviour:
   limpSpeed: 0.5
   healthBar: {fileID: 0}
   pushText: {fileID: 0}
+  characterNum: 0
 --- !u!114 &4021366068887219936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2225,11 +2226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbae106ae761574d9842f39c4405cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iKChanger: {fileID: 8409770875703938247}
+  iKRigChanger: {fileID: 8409770875703938247}
   target: {fileID: 8409770875618580823}
   grabSpeed: 5
-  healthPosition: {x: 0, y: 0, z: 0}
-  grab: 0
 --- !u!1 &607255965781609125
 GameObject:
   m_ObjectHideFlags: 0

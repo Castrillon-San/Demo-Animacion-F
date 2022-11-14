@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-public class ReachAnim : MonoBehaviour
+public class ReachAnim : MonoBehaviour, IReach
 {
     #region --- helper ---
     private enum RigAnimMode
@@ -14,15 +14,24 @@ public class ReachAnim : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private Rig iKChanger;
+    [SerializeField] private Rig iKRigChanger;
     [SerializeField] private Transform target;
     [SerializeField] private float grabSpeed = 5f;
-    public Vector3 healthPosition;
-    public bool grab = false;
+    public Vector3 healthPosition
+    {
+        get;
+        set;
+    }
+    public bool grab
+    {
+        get;
+        set;
+    }
     private RigAnimMode mode = RigAnimMode.off;
     
     void Start()
     {
+        grab = false;
         healthPosition = Vector3.zero;
         target.position = Vector3.zero;
     }
@@ -32,7 +41,7 @@ public class ReachAnim : MonoBehaviour
         if(grab == true)
         {
             grab = false;
-            iKChanger.weight = 0;
+            iKRigChanger.weight = 0;
             mode = RigAnimMode.inc;
             target.position = healthPosition;           
         }
@@ -42,18 +51,18 @@ public class ReachAnim : MonoBehaviour
         switch (mode)
         {
             case RigAnimMode.inc:
-                iKChanger.weight = Mathf.Lerp(iKChanger.weight, 1, grabSpeed * Time.deltaTime);
-                if(iKChanger.weight > 0.95f)
+                iKRigChanger.weight = Mathf.Lerp(iKRigChanger.weight, 1, grabSpeed * Time.deltaTime);
+                if(iKRigChanger.weight > 0.95f)
                 {
-                    iKChanger.weight = 1;
+                    iKRigChanger.weight = 1;
                     mode = RigAnimMode.dec;
                 }
                 break;
             case RigAnimMode.dec:
-                iKChanger.weight = Mathf.Lerp(iKChanger.weight, 0, grabSpeed * Time.deltaTime);
-                if (iKChanger.weight < 0.1f)
+                iKRigChanger.weight = Mathf.Lerp(iKRigChanger.weight, 0, grabSpeed * Time.deltaTime);
+                if (iKRigChanger.weight < 0.1f)
                 {
-                    iKChanger.weight = 0;
+                    iKRigChanger.weight = 0;
                     mode = RigAnimMode.off;
                     target.localPosition = Vector3.zero;
                 }

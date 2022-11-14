@@ -5,7 +5,7 @@ using UnityEngine.Animations.Rigging;
 
 public class ParentConstrainWeigthManager : MonoBehaviour
 {
-    [SerializeField] [Range(0,1)] private float weight;
+    [Range(0,1)] public float weight;
     [SerializeField] private MultiParentConstraint[] targetChain;
 
     public void SetConstrainsWeights()
@@ -19,6 +19,10 @@ public class ParentConstrainWeigthManager : MonoBehaviour
     }
 
     private void OnValidate()
+    {
+        SetConstrainsWeights();
+    }
+    public void ChangeWeights()
     {
         SetConstrainsWeights();
     }

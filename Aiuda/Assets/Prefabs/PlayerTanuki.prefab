@@ -15047,6 +15047,8 @@ MonoBehaviour:
   isAlive: 1
   limpSpeed: 1
   healthBar: {fileID: 0}
+  pushText: {fileID: 0}
+  characterNum: 2
 --- !u!1 &9164570459761958461
 GameObject:
   m_ObjectHideFlags: 0
