@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Health
+  - LookAt
   layers:
   - Default
   - TransparentFX

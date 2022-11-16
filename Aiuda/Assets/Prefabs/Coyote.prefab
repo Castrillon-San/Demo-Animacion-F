@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2564875039014824255}
   - component: {fileID: 2564875039014824249}
   - component: {fileID: 3738370157112014738}
+  - component: {fileID: 912869318}
   m_Layer: 0
   m_Name: Coyote
   m_TagString: Untagged
@@ -145,6 +146,23 @@ MonoBehaviour:
   iKRigChanger: {fileID: 9181008572577259542}
   target: {fileID: 9181008572577259543}
   grabSpeed: 6
+--- !u!114 &912869318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2564875039014824259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1268019fd9fc35a41850ed66905c13b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimConstraintList:
+  - {fileID: 920837103}
+  targetObject: {fileID: 0}
+  rigbuilder: {fileID: 9181008571949218512}
+  rangeAngle: 100
 --- !u!1001 &2564875038180153855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,18 +298,96 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9beb0ec7019509f4da8419b7b00537bf, type: 3}
+--- !u!4 &763286856372373713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2958857361817751854, guid: 9beb0ec7019509f4da8419b7b00537bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2564875038180153855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1545085963205121277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3956829251016461570, guid: 9beb0ec7019509f4da8419b7b00537bf,
     type: 3}
   m_PrefabInstance: {fileID: 2564875038180153855}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1817597282734236890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4224696800170769701, guid: 9beb0ec7019509f4da8419b7b00537bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2564875038180153855}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &920837103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817597282734236890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c430f382484144e925c097c2d33cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Data:
+    m_ConstrainedObject: {fileID: 763286856372373713}
+    m_SourceObjects:
+      m_Length: 0
+      m_Item0:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item1:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item2:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item3:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item4:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item5:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item6:
+        transform: {fileID: 0}
+        weight: 0
+      m_Item7:
+        transform: {fileID: 0}
+        weight: 0
+    m_Offset: {x: 0, y: 0, z: 0}
+    m_MinLimit: -100
+    m_MaxLimit: 100
+    m_AimAxis: 4
+    m_UpAxis: 2
+    m_WorldUpType: 0
+    m_WorldUpObject: {fileID: 0}
+    m_WorldUpAxis: 2
+    m_MaintainOffset: 0
+    m_ConstrainedAxes:
+      x: 1
+      y: 1
+      z: 1
 --- !u!95 &4868694300901592711 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6920158964207048568, guid: 9beb0ec7019509f4da8419b7b00537bf,
     type: 3}
   m_PrefabInstance: {fileID: 2564875038180153855}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9181008571949218512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6697198876990366511, guid: 9beb0ec7019509f4da8419b7b00537bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 2564875038180153855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9181008572577259542 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6697198877704337897, guid: 9beb0ec7019509f4da8419b7b00537bf,

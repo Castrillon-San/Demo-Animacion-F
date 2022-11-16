@@ -11,7 +11,7 @@ namespace inSession
         [SerializeField] Animator anim;
         [SerializeField] float damageTaken;
         [SerializeField] float healReciben;
-        [SerializeField] bool isAlive = true;
+        [SerializeField] public bool isAlive = true;
         [SerializeField] float limpSpeed;
         [SerializeField] Slider healthBar;
         [SerializeField] Canvas pushText;
