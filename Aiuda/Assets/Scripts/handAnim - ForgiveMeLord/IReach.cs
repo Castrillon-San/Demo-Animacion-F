@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-interface IReach
+public interface IReach
 {
     public Vector3 healthPosition
     {

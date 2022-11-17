@@ -9,6 +9,6 @@ public class LookAtScript : TargetLookAt
 {
     private void Start()
     {
-        aimConstraintList.OfType<AimConstraint>();
+        
     }
 }

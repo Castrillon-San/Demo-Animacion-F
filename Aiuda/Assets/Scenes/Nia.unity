@@ -1256,6 +1256,7 @@ MonoBehaviour:
   PlayerSpawnPoint: {fileID: 1729185302}
   vCam: {fileID: 1153371281}
   controls: {fileID: 1797868356}
+  characterExists: 0
 --- !u!1001 &992124661
 PrefabInstance:
   m_ObjectHideFlags: 0

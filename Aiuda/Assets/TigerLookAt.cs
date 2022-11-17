@@ -14,7 +14,7 @@ public class TigerLookAt : MonoBehaviour
     [SerializeField]
     [Range(0f, 180f)] float rangeAngle;
 
-    bool isViewing;
+    public bool isViewing;
     private void Start()
     {
         aliveStatus = GetComponent<PlayerHealth>();

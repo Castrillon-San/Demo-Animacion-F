@@ -10,7 +10,7 @@ using UnityEngine.Animations.Rigging;
 
 public class TargetLookAt : MonoBehaviour
 {
-    [SerializeField] protected List<MultiAimConstraint> aimConstraintList;
+    [SerializeField] List<MultiAimConstraint> aimConstraintList;
     [SerializeField] Transform targetObject = null;
     [SerializeField] private RigBuilder rigbuilder;
     PlayerHealth aliveStatus;
@@ -19,9 +19,9 @@ public class TargetLookAt : MonoBehaviour
     [Range(0f, 180f)] float rangeAngle;
     
     bool isViewing;
-    bool isDeath;
     private void Start()
     {
+        aliveStatus = GetComponent<PlayerHealth>();
         //rigbuilder = GetComponent<RigBuilder>();
     }
 

@@ -16,7 +16,7 @@ namespace inSession
         [SerializeField] Slider healthBar;
         [SerializeField] Canvas pushText;
         private float normalspeed;
-        private IReach reach;
+        public IReach reach;
         //private ReachAnim reach;
         [SerializeField] int characterNum;
 
@@ -34,7 +34,6 @@ namespace inSession
         }
         private void Update()
         {
-           
             ///estar chequeando y seteando la vid del jugador cada frame es una muy mala
             ///practica, pero yo soy de anim y no de videojuegos, asi que dejare que el teso
             ///de santi corrija esta atrocidad despues.
@@ -97,7 +96,6 @@ namespace inSession
             {
                 Harm();
             }
-            
         }
 
         private void OnTriggerStay(Collider other)
@@ -111,7 +109,9 @@ namespace inSession
                     reach.healthPosition = other.gameObject.transform.position;
                     reach.grab = true;
                     Heal();
-                    Destroy(other.gameObject);
+                    other.gameObject.transform.parent.gameObject.GetComponent<SphereCollider>().radius = 0.1f;
+                    other.gameObject.SetActive(false);
+                    Destroy(other.gameObject.transform.parent.gameObject, 0.5f);
                 }               
             }
         }
